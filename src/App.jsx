@@ -3,18 +3,18 @@ import './App.css';
 import data from './assets/movies.json';
 
 function App() {
-  const [likes, setLikes] = useState(0); // Umumiy likes
-  const [likedCards, setLikedCards] = useState({}); // Cardlarga oid like ma'lumotlari
+  const [likes, setLikes] = useState(0);
+  const [likedCards, setLikedCards] = useState({});
 
   const toggleLike = (index) => {
     setLikedCards((prevLikedCards) => {
       const updatedLikedCards = { ...prevLikedCards };
       if (updatedLikedCards[index]) {
         delete updatedLikedCards[index];
-        setLikes(likes - 1); // Likesni kamaytirish
+        setLikes(likes - 1);
       } else {
         updatedLikedCards[index] = true;
-        setLikes(likes + 1); // Likesni oshirish
+        setLikes(likes + 1);
       }
       return updatedLikedCards;
     });
